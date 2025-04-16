@@ -1,0 +1,275 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10.5t]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+\usepackage{charter}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Moncef Bousselat} \\ \vspace{1pt}
+    \small Maxeville, France $|$ 
+    \small +33753542166 $|$ 
+    \href{mailto:a.m.bousselat@gmail.com@gmail.com}{\underline{a.m.bousselat@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/moncefbousselat/}{\underline{linkedin.com/in/moncefbousselat}} $|$
+    \href{https://github.com/Somnef}{\underline{github.com/Somnef}} $|$
+    \href{https://www.somnef.com}{\underline{somnef.com}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {Master's degree in Networking and Cloud Computing}{Sep. 2023 -- Jul. 2025}
+        {Lorraine University $|$ Leeds Beckett University $|$ Lulea Technical University}{Nancy, FR $|$ Leeds, UK $|$ Skelleftea, SE}
+            \resumeItemListStart
+                \resumeItem{Selected among 23 out of 2000+ applicants for a fully-funded Erasmus Mundus scholarship}
+                \resumeItem{Pursued a joint master's degree between Lorraine University (France), Leeds Beckett University (UK), and Lulea Univestiry of Technology (Sweden). Currently completing studies with thesis in France, focusing on blockchain systems and cloud deployments.}
+                % \resumeItem{Relevant coursework: Cloud Services, Distributed Systems, Data Science \& AI, Intelligent Systems \& Robotics, Internet of Things, Advanced Wireless Networks, Systems Engineering, Networking, Quality of Service and Experience }
+            \resumeItemListEnd
+      
+        \resumeSubheading
+        {Master's degree in Data Science and AI}{Sep. 2018 -- Jul. 2023}
+        {National Polytechnic School}{Algiers, Algeria}
+            \resumeItemListStart
+                \resumeItem{Selected from the top 10\% students of the country's preparatory schools through a national contest}
+                \resumeItem{Graduated with a grade of 17.5/20 and a "very good" mention.}
+                % \resumeItem{Relevant coursework: Advanced Databases Management, Probabilities and Statistics, Multi-varied Data Analysis, Machine Learning \& Deep Learning, NLP, Business Intelligence, Blockchain, Cloud Computing and Big Data}
+            \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+    \resumeSubHeadingListStart
+
+        \resumeSubheading
+        {Full-Stack Developer Intern}{Jan 2023 -- Jul 2023}
+        {Schlumberger}{Algiers, Algeria}
+            \resumeItemListStart
+                \resumeItem{Engineered a REST API, enabling the import/export team to store 1000+ daily transaction records on a private blockchain}
+                \resumeItem{Developed a full-stack web application using Flask, VueJS, and Hyperledger Fabric; containerized the application using Docker and orchestrated deployment on AWS ECS, ensuring scalability for 500+ users}
+                \resumeItem{Solved the problem of lost imported assets which was costing up to 4x of the assets’ original values in penalties}
+            \resumeItemListEnd
+
+        \resumeSubheading
+        {Data and AI Intern}{Oct. 2022 -- Jan. 2023}
+        {Ericsson}{Algiers, Algeria}
+            \resumeItemListStart
+                \resumeItem{Implemented an image-recognition models using YOLO to assist field workers with device identification, achieving a classification accuracy of over 85\%}
+                \resumeItem{Built and trained a convolutional autoencoder for image denoising in PyTorch, which reached a 99\% reconstruction accuracy on the MNIST dataset}
+        \resumeItemListEnd
+
+        \resumeSubheading
+        {Data Analyst Intern}{May. 2022 -- Jul. 2022}
+        {BH Advisory}{Algiers, Algeria}
+            \resumeItemListStart
+                \resumeItem{Conducted a monitoring mission on the construction materials market to identify price and availability trends and patterns}
+                \resumeItem{Built web scrapers to automate data collection from company websites and showcased it on a VueJS dashboard}
+        \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+        \resumeProjectHeading
+        {\textbf{Auto-scaled AWS Infrastructure with Terraform} $|$ \emph{AWS, Terraform, Java}}{Jan. 2025}
+            \resumeItemListStart
+                \resumeItem{Designed JADE agents to DDoS a server, hosted on EC2 machines capable of spawning 20,000+ instances in under 30s}
+                \resumeItem{Deployed a scalable infrastructure with Terraform to react to intense attacks by ensuring that CPU usage is always below 50\%}
+                \resumeItem{Built a front-end application using VueJS and the AWS SDK to monitor CloudWatch metrics on the attacked servers}
+            \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Distributed System Fault Tolerance Mechanisms with Kubernetes} $|$ \emph{Bash, Docker, Kubernetes, Prometheus} $|$ \href{https://github.com/Somnef/kubernetes-fault-tolerance}{\underline{GitHub}}}{Nov. 2024}
+            \resumeItemListStart
+                \resumeItem{Deployed a Python application on Docker containers orchestrated with Kubernetes' HPA based on CPU usage, allowing the system to scale for a load of 30\%}
+                \resumeItem{Conducted stress-test attacks through infinite cURL request loops to evaluate the system's scalability and self-healing capabilities, achieved 99\% availability}
+                \resumeItem{Leveraged Prometheus to monitor and analyze resource utilization in real-time}
+            \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Machine Learning for Drinking Water Quality Evaluation} $|$ \emph{Python, PyTorch}}{May. 2024}
+            \resumeItemListStart
+                \resumeItem{Trained different machine and deep learning models to assess the drinkability of water samples based on their chemical properties }
+            \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Benchmarking GPU Energy Consumption for Training Neural Networks} $|$ \emph{Python, PyTorch, Bash}}{Apr. 2024}
+            \resumeItemListStart
+                \resumeItem{Wrote a GPU profiling tool, which runs training tasks for 25+ hyper-parameters combinations to explore the effect of each on energy consumption}
+                \resumeItem{Achieved best accuracy in the parameter pool with 20\% energy savings}
+            \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Cloud and IoT-based Classroom Provider} $|$ \emph{Python, Arduino, MongoDB, MQTT, AWS}}{Nov. 2023}
+            \resumeItemListStart
+                \resumeItem{Launched an app on AWS EC2 to collect and log room data from Arduino devices (temperature, noise, lighting...) to MongoDB in order to provide the student with the classroom that best matches their criteria through a tailored decision making algorithm }
+            \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Business Game} $|$ \emph{VueJS, Laravel, Docker}}{Dec. 2020 - Apr. 2023}
+            \resumeItemListStart
+                \resumeItem{Led the development team of a student club to build and improve a market simulation software for two consecutive editions of the "Business Game" event}
+                \resumeItem{Optimized and balanced traffic for 12 playing teams averaging 1000 requests per minute on local servers}
+            \resumeItemListEnd
+          
+        \resumeProjectHeading
+        {\textbf{NEAT algorithm applied to video games} $|$ \emph{Python, NEAT-Python, Pygame} $|$ \href{https://github.com/Somnef/snake_neat_ai}{\underline{GitHub}}}{Oct. 2022}
+            \resumeItemListStart
+                \resumeItem{Reconstructed 1:1 replicas of popular games such as Flappy Bird and Snake using Pygame}
+                \resumeItem{Trained agents leveraging neuro-evolution algorithms (NEAT), performing better than 100\% of human players tested against}
+            \resumeItemListEnd
+
+        \resumeProjectHeading
+            {\textbf{Wildfire 3D Simulator} $|$ \emph{Unity, C\#, Python, Google Earth Engine} $|$ \href{https://github.com/Somnef/semi-empirical-wildfire-simulation}{\underline{GitHub}} $|$ \href{https://www.researchgate.net/publication/354678516_Applying_semi-empirical_simulation_of_wildfire_on_real_world_satellite_imagery_data}{\underline{ResearchGate}}}{Dec. 2021}
+                \resumeItemListStart
+                    \resumeItem{Collected and segmented Google satellite imagery with machine learning (k-means) and reconstructed the 3D terrain in Unity}
+                    \resumeItem{Simulated forest wildfire spread on a 100km² area through a semi-empirical cellular-automata model}
+                \resumeItemListEnd
+
+        \resumeProjectHeading
+          {\textbf{Focus AI} $|$ \emph{Python, PyTorch, OpenCV, MediaPipe} $|$ \href{https://github.com/Somnef/focus-monitor-ai}{\underline{GitHub}}}{Nov. 2021}
+          \resumeItemListStart
+            \resumeItem{Tuned a face tracking deep learning model for focus monitoring, notifying users' when focus loss is detected }
+            \resumeItem{Logged results showed up to 50\% increase in focus and productivity of monitored users} 
+          \resumeItemListEnd
+
+        \resumeProjectHeading
+        {\textbf{Online Store scraper} $|$ \emph{Python, Selenium} $|$ \href{https://github.com/Somnef/Cdiscountscraper}{\underline{GitHub}}}{Apr. 2021}
+            \resumeItemListStart
+                \resumeItem{Built web scrapers for several online stores (Amazon, CDiscount, Materiel.net) with price logging and comparison over time}
+                \resumeItem{Multi-site comparison offered an average of 15\% in cost savings on a selection of products}
+            \resumeItemListEnd
+      
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Additional}
+    \begin{itemize}[leftmargin=0.15in, label={}]
+        \small{\item{
+        \textbf{Programming Languages}{: Python, C/C++, C\#, SQL (MySQL), PHP, JavaScript, HTML/CSS, BASH} \\
+        \textbf{Cloud \& DevOps Tools}{: AWS (EC2, S3, VPC, CloudWatch, ECS, CloudFront), Terraform, Docker, Kubernetes (MiniKube), Git, GitHub (GitHub Actions), Prometheus} \\
+        \textbf{Development Tools}{: VueJS, Node.js, Flask, Laravel, ExpressJS} \\
+        \textbf{Data Science \& Machine Learning Tools}{: NumPy, Pandas, Matplotlib, Seaborn, PyTorch, Scikit-learn, Tensorflow, Anaconda } \\
+        \textbf{Awards and Certifications}{: Arctic Challenge Hackathon Winner (2024), Algerian Engineering Competition Winner (2021), Google DevFest 21 Hackathon Winner (2021)}\\
+        \textbf{Languages}{: English (C2), French (C2), Arabic (Native)} \\
+        }}
+    \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
