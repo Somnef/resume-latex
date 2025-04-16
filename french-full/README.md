@@ -1,0 +1,1 @@
+📄 [View PDF](./french-full.pdf)
