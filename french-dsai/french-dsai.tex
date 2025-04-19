@@ -1,11 +1,11 @@
 %-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
+% CV en LaTeX
+% Auteur : Jake Gutierrez (modifié par Moncef Bousselat)
+% Basé sur : https://github.com/sb2nov/resume
+% Licence : MIT
 %------------------------
 
-\documentclass[letterpaper,10.5t]{article}
+\documentclass[letterpaper,12t]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -14,33 +14,34 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
+%----------OPTIONS DE POLICE----------
+% Sans-serif
+\usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
 
-% serif
+% Serif
 % \usepackage{CormorantGaramond}
 \usepackage{charter}
 
+\renewcommand{\normalsize}{\fontsize{11}{14}\selectfont}
 
+\usepackage{ifthen}
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{} % nettoyer l'en-tête et pied de page
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
+% Marges
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -53,41 +54,56 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
+% Mise en forme des sections
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
+% Lisibilité machine/ATS
 \pdfgentounicode=1
 
 %-------------------------
-% Custom commands
+% Commandes personnalisées
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
   }
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheadingFull}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\ 
+      \textit{\small#3} & \textit{\small #4} \\ 
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingSimple}[2]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \if\relax\detokenize{#3}\relax
+    \resumeSubheadingSimple{#1}{#2}%
+  \else
+    \resumeSubheadingFull{#1}{#2}{#3}{#4}%
+  \fi
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
+      \textit{\small#1} & \textit{\small #2} \\ 
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
+\newcommand{\resumeSubHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
+      \small#1 & #2 \\ 
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -101,181 +117,184 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  CV DÉBUTE ICI  %%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
+%----------EN-TÊTE----------
 \begin{center}
     \textbf{\Huge \scshape Moncef Bousselat} \\ \vspace{1pt}
     \small Nancy, France $|$ 
     \small +33753542166 $|$ 
-    \href{mailto:a.m.bousselat@gmail.com@gmail.com}{\underline{a.m.bousselat@gmail.com}} $|$ 
+    \href{mailto:a.m.bousselat@gmail.com}{\underline{a.m.bousselat@gmail.com}} $|$ 
     \href{https://www.linkedin.com/in/moncefbousselat/}{\underline{linkedin.com/in/moncefbousselat}} $|$
     \href{https://github.com/Somnef}{\underline{github.com/Somnef}} $|$
     \href{https://www.somnef.com}{\underline{somnef.com}}
 \end{center}
 
-
+%-----------FORMATION-----------
 \section{Formation}
     \resumeSubHeadingListStart
         \resumeSubheading
-        {Master en Networking et Cloud Computing}{Sep. 2023 -- Juil. 2025}
+        {Master en Réseaux et Cloud Computing}{Sep. 2023 -- Juil. 2025}
         {Université de Lorraine $|$ Leeds Beckett University $|$ Lulea Technical University}{Nancy, FR $|$ Leeds, UK $|$ Skelleftea, SE}
             \resumeItemListStart
                 \resumeItem{Sélectionné parmi 2000+ candidats pour la bourse Erasmus Mundus "Green Networking and Cloud Computing"}
-                \resumeItem{Modules pertinents: Services Cloud, Data Science, Systèmes Intelligents et Robotique, Internet of Things, Réseaux Sans-fil Avancés, Ingénierie des Systèmes, Réseaux, Qualité de Service et Qualité d'Expérience}
-            \resumeItemListEnd
-      
-        \resumeSubheading
-        {Master en Data Science et IA}{Sep. 2018 -- Juil. 2023}
-        {E   cole Nationale Polytechnique}{Alger, Algérie}
-            \resumeItemListStart
-                \resumeItem{Sélectionnés parmi les 10\% des meilleurs étudiants des écoles préparatoires du pays à travers un concours national}
-                \resumeItem{Modules pertinents: Bases de Données Avancées, Probabilités et Statistiques, Analyse de Données Multi-variées, Apprentissage Automatique \& Profond, Traitement du Langage Naturel, Business Intelligence, Blockchain, Cloud Computing et Big Data}
-            \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
-
-%-----------EXPERIENCE-----------
-\section{Expérience Professionnelle}
-    \resumeSubHeadingListStart
-
-        \resumeSubheading
-        {Stagiaire en Ingénierie Cloud}{Déc 2024 -- Present}
-        {Université de Lorraine}{Nancy, France}
-            \resumeItemListStart
-                \resumeItem{Création d'un système décentralisé d'identité avec Hyperledger Indy pour un partage sécurisé dans le cloud}
-                \resumeItem{Déploiement sur AWS avec Docker (ECS) et évaluation des performances du système}
+                \resumeItem{Modules clés: Services Cloud, IoT, Systèmes Robotiques Intelligents, Réseaux Sans Fil, Ingénierie des Systèmes, QoS/QoE, Analyse de Données}
             \resumeItemListEnd
 
         \resumeSubheading
-        {Stagiaire en Développement Full-Stack/Cloud}{Jan 2023 -- Juil 2023}
-        {Schlumberger}{Alger, Algérie}
+        {Master en Science des Données et Intelligence Artificielle}{Sep. 2018 -- Juil. 2023}
+        {École Nationale Polytechnique}{Alger, Algérie}
             \resumeItemListStart
-                \resumeItem{Création d'une API REST pour enregistrer 1000+ transactions/jour sur une blockchain Hyperledger Fabric}
-\resumeItem{Développement full-stack avec Flask, VueJS, Docker et déploiement sur AWS ECS, résolvant un problème critique de pertes d'actifs}
+                \resumeItem{Top 10\% des étudiants en classes préparatoires via concours national}
+                \resumeItem{Modules clés: Bases de Données Avancées, Probabilités et Statistiques, Analyse de Données Multi-Variée, Machine/Deep Learning, TALN, Blockchain, Cloud Computing}
             \resumeItemListEnd
-
-        \resumeSubheading
-        {Stagiaire Data et IA}{Oct. 2022 -- Jan. 2023}
-        {Ericsson}{Alger, Algeria}
-            \resumeItemListStart
-                \resumeItem{Mise en oeuvre d'un modèle de reconnaissance d'images utilisant YOLO pour aider les agents de terrain à identifier les appareils, avec une précision de classification de plus de 85\%}
-                \resumeItem{Construction et entraînement d'autoencodeur convolutif pour débruiter des images sur PyTorch, atteignant une précision de reconstruction de 99\% sur le dataset MNIST}
-        \resumeItemListEnd
-
-        \resumeSubheading
-        {Stagiaire Analyste de Données}{Mai 2022 -- Juil. 2022}
-        {BH Advisory}{Alger, Algérie}
-            \resumeItemListStart
-                \resumeItem{Réalisation d'une veille sur le marché des matériaux de construction pour identifier les tendances de prix et de disponibilité}
-                \resumeItem{Création de Scrapers pour la collecte de données à partir des sites web des entreprises et présentation sur un dashboard VueJS}
-        \resumeItemListEnd
-
     \resumeSubHeadingListEnd
 
+%-----------EXPÉRIENCE-----------
+\section{Expérience}
+    \resumeSubHeadingListStart
+        % \resumeSubheading
+        % {Stagiaire Ingénieur Cloud}{Déc. 2024 -- Présent}
+        % {Université de Lorraine}{Nancy, France}
+        %     \resumeItemListStart
+        %         \resumeItem{Développement d'un système d'identité décentralisée avec Hyperledger Indy}
+        %         \resumeItem{Déploiement sur AWS avec Docker ECS et évaluation des performances}
+        %     \resumeItemListEnd
 
-%-----------PROJECTS-----------
+        % \resumeSubheading
+        % {Stagiaire Développeur Full-Stack}{Jan. 2023 -- Juil. 2023}
+        % {Schlumberger}{Alger, Algérie}
+        %     \resumeItemListStart
+        %         \resumeItem{Création d'une API REST gérant 1000+ transactions/jour sur Hyperledger Fabric}
+        %         \resumeItem{Déploiement sur AWS ECS (Flask, VueJS, Docker), réduisant les coûts de pénalité de 75\%}
+        %     \resumeItemListEnd
+
+        \resumeSubheading
+        {Stagiaire Ingénieur Données et IA}{Oct. 2022 -- Jan. 2023}
+        {Ericsson}{Alger, Algérie}
+            \resumeItemListStart
+                \resumeItem{YOLO pour l'identification d'équipements terrain (précision 85\%)}
+                \resumeItem{Autoencodeur PyTorch pour débruitage d'images (précision 99\% sur MNIST)}
+            \resumeItemListEnd
+
+        \resumeSubheading
+        {Stagiaire Analyste Données}{Mai 2022 -- Juil. 2022}
+        {BH Advisory}{Alger, Algérie}
+            \resumeItemListStart
+                \resumeItem{Veille du marché des matériaux pour détecter tendances prix et stocks}
+                \resumeItem{Scrapers Web et tableau de bord VueJS pour visualisation automatisée}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------PROJETS-----------
 \section{Projets}
     \resumeSubHeadingListStart
 
-        % \resumeProjectHeading
-        % {\textbf{Infrastructure AWS de mise à l'échelle automatique déployée avec Terraform} $|$ \emph{AWS, Terraform, Java}}{Jan. 2025}
+        % \resumeSubheading
+        % {Infrastructure auto-scalable sur AWS avec Terraform}{Jan. 2025}
+        % {\href{https://github.com/Somnef/d7001d-lab4}{\underline{Voir sur GitHub}}}{}
         %     \resumeItemListStart
-        %         \resumeItem{Agents JADE conçus pour attaquer un serveur par DDoS, déployés sur des machines EC2 distribuées capables de générer plus de 20,000 instances en moins de 30 secondes}
-        %         \resumeItem{Déploiement d'une infrastructure de serveur évolutive utilisant Terraform pour réagir à l'intensité des attaques en garantissant que l'utilisation du processeur est toujours inférieure à 50\%}
-        %         \resumeItem{Création d'une application front-end utilisant VueJS et le SDK AWS pour surveiller les métriques CloudWatch sur les serveurs attaqués}
+        %         \resumeItem{Simulation d'attaques DDoS sur EC2 avec 20000+ instances/minute (JADE)}
+        %         \resumeItem{Déploiement d'une infra résiliente via Terraform}
+        %         \resumeItem{Dashboard VueJS connecté à AWS SDK pour suivre CloudWatch}
         %     \resumeItemListEnd
 
-        % \resumeProjectHeading
-        % {\textbf{Tolérance aux pannes de systèmes distribués avec Kubernetes} $|$ \emph{Bash, Docker, Kubernetes, Prometheus} $|$ \href{https://github.com/Somnef/kubernetes-fault-tolerance}{\underline{GitHub}}}{Nov. 2024}
+        % \resumeSubheading
+        % {Tolérance aux pannes avec Kubernetes}{Nov. 2024}
+        % {\href{https://github.com/Somnef/kubernetes-fault-tolerance}{\underline{Voir sur GitHub}}}{}
         %     \resumeItemListStart
-        %         \resumeItem{Conception et déploiement d'une application Python sans état sur des conteneurs Docker orchestrés avec Kubernetes avec mise à l'échelle automatique horizontale des pods (HPA) basée sur l'utilisation du processeur, permettant au système de s'adapter automatiquement à des conditions de charge variables}
-        %         \resumeItem{Mise en place d'attaques de test de résistance via un volume élevé de requêtes cURL pour évaluer la scalabilité et les capacités d'auto-réparation du système, démontrant ainsi la capacité de Kubernetes à s'adapter dynamiquement aux fluctuations du trafic et à maintenir une haute disponibilité}
-        %         \resumeItem{Utilisation de Prometheus pour surveiller et analyser l'utilisation des ressources, garantissant que le système s'adapte efficacement à l'évolution des modèles de trafic avec un minimum de frais généraux}
+        %         \resumeItem{Déploiement d'une appli Python sur un cluster Kubernetes avec HPA}
+        %         \resumeItem{Load-testing avec requêtes cURL - Disponibilité de 99.9\% atteinte}
+        %         \resumeItem{Monitoring des resources en temps réel via Prometheus et Grafana}
         %     \resumeItemListEnd
 
-        % \resumeProjectHeading
-        % {\textbf{Apprentissage automatique pour l'évaluation de la qualité de l'eau potable} $|$ \emph{Python, PyTorch}}{Mai 2024}
-        %     \resumeItemListStart
-        %         \resumeItem{Entraînement de différents modèles d'apprentissage automatique et profond pour évaluer la potabilité des échantillons d'eau en fonction de leurs propriétés chimiques}
-        %     \resumeItemListEnd
-
-        % \resumeProjectHeading
-        % {\textbf{Profilage de la consommation énergétique du GPU pour l'entraînement des RNA} $|$ \emph{Python, PyTorch, Bash}}{Avr. 2024}
-        %     \resumeItemListStart
-        %         \resumeItem{Développement d'un outil de profilage GPU, qui exécute des tâches d'entraînement pour plus de 25 combinaisons d'hyperparamètres afin d'explorer l'effet de chacune sur la consommation d'énergie}
-        %         \resumeItem{Obtention de la meilleure précision dans le pool de paramètres avec 20\% d'économies d'énergie}
-        %     \resumeItemListEnd
-
-        % \resumeProjectHeading
-        % {\textbf{Fournisseur de salles basé sur le cloud et l'IoT} $|$ \emph{Python, Arduino, MongoDB, MQTT, AWS}}{Nov. 2023}
-        %     \resumeItemListStart
-        %         \resumeItem{Déploiement d'une application sur AWS EC2 pour collecter et enregistrer les données de la salle à partir des appareils Arduino (température, bruit, éclairage...) sur MongoDB afin de fournir à l'étudiant la salle qui correspond le mieux à ses critères grâce à un algorithme de prise de décision personnalisé}
-        %     \resumeItemListEnd
-
-        % \resumeProjectHeading
-        % {\textbf{Business Game} $|$ \emph{VueJS, Laravel, Docker}}{Dec. 2020 - Avr. 2023}
-        %     \resumeItemListStart
-        %         \resumeItem{Pilotage de l'équipe de développement d'un club étudiant pour construire et améliorer un logiciel de simulation de marché pour deux éditions consécutives de l'événement "Business Game"}
-        %         \resumeItem{Optimisation et équilibrage du trafic pour 12 équipes de jeu avec une moyenne de 1 000 requêtes par minute sur les serveurs locaux}
-        %     \resumeItemListEnd
-          
-        \resumeProjectHeading
-        {\textbf{Algorithme NEAT appliqué aux jeux vidéos} $|$ \emph{Python, NEAT-Python, Pygame} $|$ \href{https://github.com/Somnef/snake_neat_ai}{\underline{GitHub}}}{Oct. 2022}
+        \resumeSubheading
+        {Évaluation IA de la potabilité de l'eau}{Mai 2024}
+        {\href{https://github.com/Somnef/dl-water-quality}{\underline{Voir sur GitHub}}}{}
             \resumeItemListStart
-                \resumeItem{Développement de répliques 1:1 de jeux populaires tels que Flappy Bird et Snake à l'aide de Pygame}
-                \resumeItem{Entraînement d'agents avec des algorithmes de neuro-évolution, performants mieux que 100\% des joueurs humains testés}
+                \resumeItem{Classification de l'eau via ses propriétés chimiques (90\% de précision)}
+                \resumeItem{Comparaison des modèles de classification ML/DL sur différentes plages d'hyperparamètres}
             \resumeItemListEnd
 
-        \resumeProjectHeading
-            {\textbf{Simulateur de feux de forêts 3D} $|$ \emph{Unity, C\#, Python, Google Earth Engine} $|$ \href{https://github.com/Somnef/semi-empirical-wildfire-simulation}{\underline{GitHub}} $|$ \href{https://www.researchgate.net/publication/354678516_Applying_semi-empirical_simulation_of_wildfire_on_real_world_satellite_imagery_data}{\underline{ResearchGate}}}{Dec. 2021}
-                \resumeItemListStart
-                    \resumeItem{Collecte et segmentation d'images satellites Google avec apprentissage automatique et reconstruction du terrain 3D sur Unity}
-                    \resumeItem{Simulation de la propagation d'un feu de forêt sur la scène grâce à un modèle semi-empirique d'automates cellulaires}
-                    \resumeItem{Lauréat du concours algérien d'ingénierie}
-                \resumeItemListEnd
+        % \resumeSubheading
+        % {Profilage énergétique GPU pour Deep Learning}{Avr. 2024}
+        % {\href{https://github.com/Somnef/gpu-profiling-for-dl}{\underline{Voir sur GitHub}}}{}
+        %     \resumeItemListStart
+        %         \resumeItem{Profilage GPU sur 25+ combinaisons d'hyperparamètres}
+        %         \resumeItem{Gain énergétique de 20\% avec performance optimale}
+        %     \resumeItemListEnd
 
-        \resumeProjectHeading
-          {\textbf{Focus AI} $|$ \emph{Python, PyTorch, OpenCV, MediaPipe} $|$ \href{https://github.com/Somnef/focus-monitor-ai}{\underline{GitHub}}}{Nov. 2021}
-          \resumeItemListStart
-            \resumeItem{Optimisation d'un modèle d'apprentissage profond de suivi du visage pour la surveillance de la concentration, avertissant les utilisateurs lorsqu'une perte de concentration est détectée}
-            \resumeItem{Les résultats enregistrés ont montré une augmentation allant jusqu'à 50\% de la concentration et de la productivité des utilisateurs surveillés} 
-            \resumeItem{Gagnant du hackathon Google DevFest 2021}
-          \resumeItemListEnd
+        % \resumeSubheading
+        % {Recommandation de salle via IoT}{Nov. 2023}
+        % {\href{https://github.com/Somnef/iot_project_app}{\underline{Voir sur GitHub}}}{}
+        %     \resumeItemListStart
+        %         \resumeItem{App EC2 avec collecte de température/bruit et stockage MongoDB}
+        %         \resumeItem{Algorithme décisionnel pour recommandation personnalisée}
+        %     \resumeItemListEnd
 
-        \resumeProjectHeading
-        {\textbf{Scraper de boutique en ligne} $|$ \emph{Python, Selenium} $|$ \href{https://github.com/Somnef/CdiscountScraper}{\underline{GitHub}}}{Avr. 2021}
+        % \resumeSubheading
+        % {Business Game}{Mai 2022}
+        % {}{}
+        %     \resumeItemListStart
+        %         \resumeItem{Encadrement d'équipe pour simulateur de marché multi-joueurs}
+        %         \resumeItem{Optimisation pour 12 équipes (1000+ requêtes/min en local)}
+        %     \resumeItemListEnd
+
+        \resumeSubheading
+        {NEAT appliqué aux jeux vidéo}{Oct. 2022}
+        {\href{https://github.com/Somnef/snake_neat_ai}{\underline{Voir sur GitHub}}}{}
             \resumeItemListStart
-                \resumeItem{Création de scrapers Web pour plusieurs boutiques en ligne (Amazon, CDiscount, Materiel.net) avec enregistrement des prix et comparaison au fil du temps}
-                \resumeItem{La comparaison multi-sites a permis de réaliser en moyenne 15\% d'économies sur une sélection de produits}
+                \resumeItem{Reproduction de Flappy Bird/Snake avec Pygame}
+                \resumeItem{Agents NEAT surpassant tous les joueurs testés}
             \resumeItemListEnd
-      
+
+        \resumeSubheading
+        {Simulateur 3D de feux de forêt}{Déc. 2021}
+        {\href{https://github.com/Somnef/semi-empirical-wildfire-simulation}{\underline{Voir sur GitHub}} $|$ \href{https://www.researchgate.net/publication/354678516_Applying_semi-empirical_simulation_of_wildfire_on_real_world_satellite_imagery_data}{\underline{Lire sur ResearchGate}}}{}
+            \resumeItemListStart
+                \resumeItem{Reconstruction 3D de terrain via images satellite Google et clustering k-means}
+                \resumeItem{Simulation de feu sur 100km² avec modèle cellulaire semi-empirique}
+            \resumeItemListEnd
+
+        \resumeSubheading
+        {Focus AI}{Nov. 2021}
+        {\href{https://github.com/Somnef/focus-monitor-ai}{\underline{Voir sur GitHub}}}{}
+            \resumeItemListStart
+                \resumeItem{Détection de perte de concentration via suivi facial en temps réel avec Mediapipe}
+                \resumeItem{Les tests démontrent une augmentation de 50\% de la concentration des utilisateurs}
+            \resumeItemListEnd
+
+        % \resumeSubheading
+        % {Scraper boutique en ligne}{Avr. 2021}
+        % {\href{https://github.com/Somnef/CdiscountScrapper}{\underline{Voir sur GitHub}}}{}
+        %     \resumeItemListStart
+        %         \resumeItem{Développement de scrapers multi-sites (Amazon, CDiscount, etc.) avec suivi de prix}
+        %         \resumeItem{Comparaison automatique avec 15\% d'économies moyennes}
+        %     \resumeItemListEnd
+
     \resumeSubHeadingListEnd
 
-
-
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Additionnel}
+%-----------PRIX & CERTIFICATIONS-----------
+\section{Prix \& Certifications}
     \begin{itemize}[leftmargin=0.15in, label={}]
-        \small{\item{
-        \textbf{Langages de Programmation}{: Python, C/C++, C\#, SQL (MySQL), PHP, JavaScript, HTML/CSS, BASH} \\
-        \textbf{Outils Cloud \& DevOps}{: AWS (EC2, S3, VPC, CloudWatch, ECS, CloudFront), Terraform, Docker, Kubernetes (MiniKube), Git, GitHub (GitHub Actions), Prometheus} \\
-        \textbf{Outils de Développement}{: VueJS, Node.js, Flask, Laravel, ExpressJS} \\
-        \textbf{Outils Data Science \& Machine Learning}{: NumPy, Pandas, Matplotlib, Seaborn, PyTorch, Scikit-learn, Tensorflow, Anaconda } \\
-        \textbf{Prix et Certifications}{: Gagnant du Hackathon Arctic Challenge (Suède, 2024), Gagnant de l'Algerian Engineering Competition (Algérie, 2021), Gagnant du Hackathon Google DevFest 21 (Algérie, 2021)}\\
-        \textbf{Langues}{: Français (C2), Anglais (C2), Arabe (Langue Maternelle)} \\
-        }}
+        \item{
+            \textbf{Certifications}{ : AWS Certified Solutions Architect Associate}\\
+            \textbf{Prix}{ : 1\textsuperscript{re} place - Arctic Challenge (Suède, 2024), 2\textsuperscript{e} place - Hackathon Google DevFest (Algérie, 2021)}\\
+        }
     \end{itemize}
 
+%-----------COMPÉTENCES-----------
+\section{Compétences}
+    \begin{itemize}[leftmargin=0.15in, label={}]
+        \item{
+        \textbf{Langages}{ : Python, C/C++, Java, PHP/SQL, JavaScript/TypeScript, BASH} \\
+        \textbf{Technologies}{ :  NumPy, Pandas, Matplotlib, Seaborn, PyTorch, Scikit-learn, Tensorflow, Anaconda, AWS (certifié), Terraform, Docker, Kubernetes, Git, CI/CD, Prometheus, Grafana} \\
+        \textbf{Langues}{ : Français (C2), Anglais (C2), Arabe (natif), Suédois (notions)} \\
+        }
+    \end{itemize}
 
 %-------------------------------------------
 \end{document}

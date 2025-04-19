@@ -14,7 +14,8 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+% \usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
@@ -34,6 +35,7 @@
 
 \renewcommand{\normalsize}{\fontsize{11}{14}\selectfont}
 
+\usepackage{ifthen}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -70,12 +72,28 @@
   }
 }
 
-\newcommand{\resumeSubheading}[4]{
+
+\newcommand{\resumeSubheadingFull}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\ 
       \textit{\small#3} & \textit{\small #4} \\ 
     \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingSimple}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \if\relax\detokenize{#3}\relax
+    \resumeSubheadingSimple{#1}{#2}%
+  \else
+    \resumeSubheadingFull{#1}{#2}{#3}{#4}%
+  \fi
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -126,7 +144,7 @@
         {University of Lorraine $|$ Leeds Beckett University $|$ Lulea Technical University}{Nancy, FR $|$ Leeds, UK $|$ Skelleftea, SE}
             \resumeItemListStart
                 \resumeItem{Selected among 2000+ applicants for the Erasmus Mundus scholarship in "Green Networking and Cloud Computing"}
-                \resumeItem{Relevant modules: Cloud Services, Intelligent Systems and Robotics, Internet of Things, Advanced Wireless Networks, System Engineering, QoS and QoE, Data Analysis}
+                \resumeItem{Relevant coursework: Cloud Services, Intelligent Systems and Robotics, Internet of Things, Advanced Wireless Networks, System Engineering, QoS and QoE, Data Analysis}
             \resumeItemListEnd
       
         \resumeSubheading
@@ -134,7 +152,7 @@
         {National Polytechnic School}{Algiers, Algeria}
             \resumeItemListStart
                 \resumeItem{Ranked in the top 10\% of prepatory school students nationwide, selected through a national competitive exam}
-                \resumeItem{Relevant modules: Advanced Databases, Probability and Statistics, Multivariate Data Analysis, Machine \& Deep Learning, NLP, Blockchain, Cloud Computing}
+                \resumeItem{Relevant coursework: Advanced Databases, Probability and Statistics, Multivariate Data Analysis, Machine \& Deep Learning, NLP, Blockchain, Cloud Computing}
             \resumeItemListEnd
   \resumeSubHeadingListEnd
 
