@@ -1,8 +1,8 @@
 %-------------------------
-% CV en LaTeX
-% Auteur : Jake Gutierrez (modifié par Moncef Bousselat)
-% Basé sur : https://github.com/sb2nov/resume
-% Licence : MIT
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
 %------------------------
 
 \documentclass[letterpaper,12t]{article}
@@ -14,20 +14,25 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
+% \usepackage[hidelinks]{hyperref}
 \usepackage[colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
+\usepackage{ragged2e}
 
-%----------OPTIONS DE POLICE----------
-% Sans-serif
+\usepackage{graphicx}
+\graphicspath{ {../images/} }
+
+%----------FONT OPTIONS----------
+% sans-serif
 \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
 
-% Serif
+% serif
 % \usepackage{CormorantGaramond}
 \usepackage{charter}
 
@@ -38,12 +43,12 @@
 \usepackage{ifthen}
 
 \pagestyle{fancy}
-\fancyhf{} % nettoyer l'en-tête et pied de page
+\fancyhf{} % clear all header and footer fields
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Marges
+% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -56,21 +61,21 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Mise en forme des sections
+% Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Lisibilité machine/ATS
+% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
-% Commandes personnalisées
+% Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item \small \justifying #1 \vspace{-2pt}
 }
+
+
 
 \newcommand{\resumeSubheadingFull}[4]{
   \vspace{-2pt}\item
@@ -119,20 +124,54 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  CV DÉBUTE ICI  %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
-%----------EN-TÊTE----------
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
 \begin{center}
-    \textbf{\Huge \scshape Moncef Bousselat} \\ \vspace{1pt}
-    \small Nancy, France $|$ 
-    \small +33753542166 $|$ 
-    \href{mailto:a.m.bousselat@gmail.com}{\underline{a.m.bousselat@gmail.com}} $|$ 
-    \href{https://www.linkedin.com/in/moncefbousselat/}{\underline{linkedin.com/in/moncefbousselat}} $|$
-    \href{https://github.com/Somnef}{\underline{github.com/Somnef}} $|$
-    \href{https://www.somnef.com}{\underline{somnef.com}}
+    \begin{minipage}[c]{0.17\textwidth}
+        \centering
+        \setlength{\fboxsep}{0.1pt}
+        \setlength{\fboxrule}{2pt}
+        \fbox{\includegraphics[width=.95\linewidth]{picture.png}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.8\textwidth}
+        \textbf{\LARGE \scshape Moncef Bousselat}
+        \vspace{3pt}
+    
+        \textbf{\large \scshape Ingénieur Data \& IA}
+        \vspace{5pt}
+
+        \begin{minipage}{\textwidth}
+            \justifying \small \noindent
+            Bientôt diplômé en Cloud Computing et titulaire d'un Master en Data Science et IA, 
+            je recherche un poste dans la Data et l'IA pour mettre à profit mes 
+            compétences technique et pluridisciplinaires acquises au cours de mon 
+            parcours académique et professionnel.
+        \end{minipage}
+
+        \vspace{5pt}
+        
+        \raggedright \small 
+        % \underline{Contact:}\\
+        Nancy, France $|$ 
+        \small +33753542166 $|$ 
+        \href{mailto:a.m.bousselat@gmail.com@gmail.com}{\underline{a.m.bousselat@gmail.com}} $|$
+        \href{https://www.linkedin.com/in/moncefbousselat/}{\underline{linkedin.com/in/moncefbousselat}}
+        % \\
+
+        % \underline{Links:}\\
+        \href{https://github.com/Somnef}{\underline{github.com/Somnef}} $|$
+        \href{https://www.somnef.com}{\underline{somnef.com}}
+    \end{minipage}
 \end{center}
 
 %-----------FORMATION-----------
@@ -217,8 +256,7 @@
         {Évaluation IA de la potabilité de l'eau}{Mai 2024}
         {\href{https://github.com/Somnef/dl-water-quality}{\underline{Voir sur GitHub}}}{}
             \resumeItemListStart
-                \resumeItem{Classification de l'eau via ses propriétés chimiques (90\% de précision)}
-                \resumeItem{Comparaison des modèles de classification ML/DL sur différentes plages d'hyperparamètres}
+                \resumeItem{Classification de la potabilité de l'eau via ses propriétés chimiques avec ML/DL, 90\% de précision atteinte}
             \resumeItemListEnd
 
         % \resumeSubheading
@@ -265,8 +303,7 @@
         {Focus AI}{Nov. 2021}
         {\href{https://github.com/Somnef/focus-monitor-ai}{\underline{Voir sur GitHub}}}{}
             \resumeItemListStart
-                \resumeItem{Détection de perte de concentration via suivi facial en temps réel avec Mediapipe}
-                \resumeItem{Les tests démontrent une augmentation de 50\% de la concentration des utilisateurs}
+                \resumeItem{Face tracking IA pour détection de perte de concentration et augmentation de 50\% de la concentration des utilisateurs}
             \resumeItemListEnd
 
         % \resumeSubheading
