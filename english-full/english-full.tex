@@ -20,8 +20,10 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
+\usepackage{ragged2e}
 
-
+\usepackage{graphicx}
+\graphicspath{ {../images/} }
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -70,10 +72,9 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item \small \justifying #1 \vspace{-2pt}
 }
+
 
 
 \newcommand{\resumeSubheadingFull}[4]{
@@ -135,14 +136,45 @@
 % \end{tabular*}
 
 \begin{center}
-    \textbf{\Huge \scshape Moncef Bousselat} \\ \vspace{1pt}
-    \small Nancy, France $|$ 
-    \small +33753542166 $|$ 
-    \href{mailto:a.m.bousselat@gmail.com@gmail.com}{\underline{a.m.bousselat@gmail.com}} $|$ 
-    \href{https://www.linkedin.com/in/moncefbousselat/}{\underline{linkedin.com/in/moncefbousselat}} $|$
-    \href{https://github.com/Somnef}{\underline{github.com/Somnef}} $|$
-    \href{https://www.somnef.com}{\underline{somnef.com}}
+    \begin{minipage}[c]{0.17\textwidth}
+        \centering
+        \setlength{\fboxsep}{0.1pt}
+        \setlength{\fboxrule}{2pt}
+        \fbox{\includegraphics[width=.95\linewidth]{picture.png}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.8\textwidth}
+        \textbf{\LARGE \scshape Moncef Bousselat}
+        \vspace{3pt}
+    
+        \textbf{\large \scshape Cloud \& AI Engineer}
+        \vspace{5pt}
+
+        \begin{minipage}{\textwidth}
+            \justifying \small \noindent
+            Graduate in Cloud Computing with a Master's in Data and AI, seeking a
+            Cloud \& AI role to apply my technical expertise and interdisciplinary 
+            skills developed through my academic and professional journey.
+        \end{minipage}
+
+        \vspace{5pt}
+        
+        \raggedright \small 
+        % \underline{Contact:}\\
+        Nancy, France $|$ 
+        \small +33753542166 $|$ 
+        \href{mailto:a.m.bousselat@gmail.com@gmail.com}{\underline{a.m.bousselat@gmail.com}} $|$
+        \href{https://www.linkedin.com/in/moncefbousselat/}{\underline{linkedin.com/in/moncefbousselat}}
+        % \\
+
+        % \underline{Links:}\\
+        \href{https://github.com/Somnef}{\underline{github.com/Somnef}} $|$
+        \href{https://www.somnef.com}{\underline{somnef.com}}
+    \end{minipage}
 \end{center}
+    
+% \vspace{0.5em}
+% \noindent\rule{\linewidth}{0.4pt}
 
 
 %-----------EDUCATION-----------
@@ -167,7 +199,7 @@
 
 
 %-----------EXPERIENCE-----------
-\section{Experience}
+\section{Professional Experience}
     \resumeSubHeadingListStart
         \resumeSubheading
         {Cloud Engineer -- Intern}{Dec. 2024 -- Jul. 2025}
@@ -232,8 +264,7 @@
         {\href{https://github.com/Somnef/dl-water-quality}{\underline{View on GitHub}}}{}
         {}{}
             \resumeItemListStart
-                \resumeItem{Used chemical features to classify water as drinkable or not}
-                \resumeItem{Trained and compared multiple ML and DL models, reaching 90\% accuracy}
+                \resumeItem{Used chemical features to classify water as drinkable or not through ML and DL models, reaching 90\% accuracy}
             \resumeItemListEnd
 
         \resumeSubheading
@@ -259,23 +290,21 @@
                 \resumeItem{Led student dev team to build and improve a market simulation game}
                 \resumeItem{Optimized traffic for 12 teams, handling 1000+ req/min on local servers}
             \resumeItemListEnd
-          
+
         \resumeSubheading
-        {NEAT Algorithm Applied to Video Games}{Oct. 2022}
-        {\href{https://github.com/Somnef/snake_neat_ai}{\underline{View on GitHub}}}{}
-            \resumeItemListStart
-                \resumeItem{Rebuilt Flappy Bird and Snake in Pygame with matching gameplay}
-                \resumeItem{Used NEAT to evolve agents without supervised training}
-                \resumeItem{Agents outperformed all tested human players}
-            \resumeItemListEnd
+            {NEAT Algorithm Applied to Video Games}{Oct. 2022}
+            {\href{https://github.com/Somnef/snake_neat_ai}{\underline{View on GitHub}}}{}
+                \resumeItemListStart
+                    \resumeItem{Rebuilt Flappy Bird and Snake in Pygame with matching gameplay}
+                    \resumeItem{Used NEAT to evolve agents with unsupervised training and outperformed all tested human players}
+                \resumeItemListEnd
 
         \resumeSubheading
         {Wildfire 3D Simulator}{Dec. 2021}
         {\href{https://github.com/Somnef/semi-empirical-wildfire-simulation}{\underline{View on GitHub}} $|$ \href{https://www.researchgate.net/publication/354678516_Applying_semi-empirical_simulation_of_wildfire_on_real_world_satellite_imagery_data}{\underline{Read on ResearchGate}}}{}
             \resumeItemListStart
-                \resumeItem{Segmented Google satellite images with k-means for terrain mapping}
-                \resumeItem{Rebuilt the 3D landscape in Unity for a 100km² forest area}
-                \resumeItem{Simulated wildfire spread using a semi-empirical cellular automata model}
+                \resumeItem{Segmented Google Earth Engine satellite imagery with k-means clustering for terrain mapping}
+                \resumeItem{Rebuilt the 3D landscape for a 100km² forest area and simulated wildfire spread using a semi-empirical cellular automata}
             \resumeItemListEnd
     
 
